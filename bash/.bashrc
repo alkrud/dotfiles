@@ -14,8 +14,9 @@ bind -x '"\C-t":"~/.config/scripts/open_repos.sh"'
 bind -x '"\C-e":"~/.config/scripts/open_session.sh"'
 
 # Variables
-EDITOR=nvim
-export "GTK_USE_PORTAL=1" 
+export EDITOR=nvim
+export GTK_USE_PORTAL=1 
+export MANPAGER='nvim +Man!'
 # PS1="[$SHLVL $USER@$HOSTNAME \\w]$\033[37m "
 
 # Aliases
@@ -53,10 +54,6 @@ function proj {
 
 function dot {
     cd "$HOME/dotfiles/$1"
-}
-
-function man {
-    sh -c "man $1 | nvim -R -c 'set filetype=man'"
 }
 
 # pnpm
